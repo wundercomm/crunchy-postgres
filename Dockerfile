@@ -16,4 +16,4 @@ RUN git clone https://github.com/michelp/pgjwt.git
 RUN cd pgjwt && make && make install
 
 WORKDIR /
-USER postgres
+USER 26
