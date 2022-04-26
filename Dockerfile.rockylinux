@@ -1,7 +1,13 @@
+# FROM quay.io/rockylinux/rockylinux AS baserocky
+
 FROM registry.developers.crunchydata.com/crunchydata/crunchy-postgres:ubi8-14.2-1
 
 USER root
 WORKDIR /usr/src
+# RUN rm /etc/yum.repos.d/*
+# COPY --from=baserocky /etc/yum.conf /etc/yum.conf
+# COPY --from=baserocky /etc/yum.repos.d /etc/yum.repos.d
+# COPY --from=baserocky /etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial /etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial
 RUN rm /etc/yum.repos.d/crunchypg14.repo
 RUN microdnf clean all;
 RUN curl -o /tmp/pgdg-redhat-repo-latest.noarch.rpm https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
