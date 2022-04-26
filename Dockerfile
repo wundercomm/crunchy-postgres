@@ -1,6 +1,6 @@
 FROM quay.io/rockylinux/rockylinux AS baserocky
 
-FROM registry.developers.crunchydata.com/crunchydata/crunchy-postgres:centos8-14.2-0
+FROM registry.developers.crunchydata.com/crunchydata/crunchy-postgres:ubi8-14.2-1
 
 USER root
 WORKDIR /usr/src
